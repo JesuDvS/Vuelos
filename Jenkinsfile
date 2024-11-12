@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clonar repositorio') {
             steps {
-                git branch: 'master', url: ""
+                git branch: 'master', url: "https://github.com/JesuDvS/Vuelos.git"
             }
         }
         stage('Construir aplicación') {
