@@ -8,17 +8,15 @@ pipeline {
         }
         stage('Construir aplicación') {
             steps {
-                // En Windows usamos "bat" y llamamos al script de Maven con ".cmd"
                 bat './mvnw.cmd clean package'
             }
         }
         stage('Ejecutar aplicación') {
             steps {
-            //
-                // Usamos "bat" en lugar de "sh" para ejecutar el JAR en Windows
-                // Cambiamos el nombre del archivo JAR al que se generó realmente
-                bat 'java -jar target/Vuelos-0.0.1-SNAPSHOT.jar --server.port=8081'
-
+                bat '''
+                    set JAVA_OPTS=-Djavafx.platform=any
+                    java --module-path "C:/Users/coron/Downloads/openjfx-23.0.1_windows-x64_bin-sdk/javafx-sdk-23.0.1/lib" --add-modules javafx.controls,javafx.fxml -jar target/Vuelos-0.0.1-SNAPSHOT.jar
+                '''
             }
         }
     }
