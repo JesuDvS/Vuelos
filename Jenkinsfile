@@ -16,7 +16,7 @@ pipeline {
             steps {
                 // Usamos "bat" en lugar de "sh" para ejecutar el JAR en Windows
                 // Cambiamos el nombre del archivo JAR al que se generó realmente
-                bat 'java -jar target/ejercicio-0.0.1-SNAPSHOT.jar --server.port=8081'
+                bat 'java -jar target/Vuelos-0.0.1-SNAPSHOT.jar --server.port=8081'
 
             }
         }
