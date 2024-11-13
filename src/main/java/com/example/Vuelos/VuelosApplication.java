@@ -10,7 +10,7 @@ public class VuelosApplication {
 	private static ConfigurableApplicationContext springContext;
 
 	public static void main(String[] args) {
-		System.getProperties().put("server.port", "8081"); // Cambia el puerto aquí
+		System.getProperties().put("server.port", "8081");
 		springContext = SpringApplication.run(VuelosApplication.class, args);
 		Application.launch(FlightApp.class, args);
 	}

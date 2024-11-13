@@ -67,8 +67,6 @@ public class FlightApp extends Application {
         new Thread(() -> {
             try {
                 String schedule = flightService.getFlightSchedule(airlineCode);
-
-                // Actualizar la UI en el hilo principal
                 Platform.runLater(() -> {
                     if (schedule.startsWith("Error")) {
                         flightInfoArea.appendText("Error en la consulta\n");
